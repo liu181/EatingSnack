@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			font-family: '微软雅黑';
+		}
+		.content{
+			height: 300px;
+			width: 500px;
+			margin: 50px auto;
+		}
+		.register{
+			height: 100%;
+			width: 100%;
+			border: 1px solid #ccc;
+
+		} 
+		.register div{
+			margin: 0 auto;
+			width: 400px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 25px;
+		}
+		input{
+			border:1px solid #ccc;
+			border-radius: 5px;
+			width: 200px;
+			height: 30px;
+			
+		}
+		a{
+			height: 60px;
+			line-height: 60px;
+			display: block;
+			background: purple;
+			width: 200px;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			font-size: 30px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+		}
+		p{
+			color: green;
+			text-align: center;
+
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="content">
+		
+		<div class="register">
+			<form action="">
+				<div>
+					<span>账号: </span><input type="text" class="name">
+				</div>
+				<div>
+					<span>密码: </span><input type="text" class="passworld">
+				</div>
+				
+				<a href="javascript:void(0);" class='login'>登录</a>
+				<a href="/">返回</a>
+				<p class='turn'></p>
+			</form>
+		</div>
+		
+	</div>
+	<script src="js/ajax.js"></script>
+	<script>
+	var login = document.querySelector('.login')
+	
+	var p = document.querySelector('.turn')
+	login.addEventListener('click', function () {
+
+		var name = document.querySelector('.name').value;
+		var passworld = document.querySelector('.passworld').value
+		console.log(name)
+		console.log(passworld)
+		ajax({
+			url:'http://192.168.25.88:3000/login',
+			// url:'http://192.168.23.4:3000/login',
+			// url:'/login',
+			method: 'POST',
+			data:{
+				name: name,
+				passworld: passworld
+			},
+			success: function (data) {
+				console.log(JSON.parse(data).url)
+				if(JSON.parse(data).url){
+					// 挑战之前 先将用户名存储一下
+					localStorage.setItem('user',name)
+					// 跳转
+					window.location.pathname = JSON.parse(data).url
+				} else {
+					p.innerHTML = '用户名或密码不正确'
+				}
+			}
+		})
+	})
+	</script>
+</body>
+</html>

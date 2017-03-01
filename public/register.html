@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			font-family: '微软雅黑';
+		}
+		.content{
+			height: 300px;
+			width: 500px;
+			margin: 50px auto;
+		}
+		.register{
+			height: 100%;
+			width: 100%;
+			border: 1px solid #ccc;
+
+		}
+		.register div{ 
+			margin: 0 auto;
+			width: 400px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 25px;
+		}
+		input{
+			border:1px solid #ccc;
+			border-radius: 5px;
+			width: 200px;
+			height: 30px;
+			
+		}
+		a{
+			height: 60px;
+			line-height: 60px;
+			display: block;
+			background: purple;
+			width: 200px;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			font-size: 30px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			text-decoration: none;
+
+		}
+		p{
+			color: green;
+			text-align: center;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="register">
+			<form action="">
+				<div>
+					<span>账号: </span><input type="text" class="name">
+				</div>
+				<div>
+					<span>密码: </span><input type="text" class="passworld">
+				</div>
+				<a href="javascript:void(0);" class='cli'>注册</a>
+				<a href="/">返回</a>
+			</form>
+			<p class="turn"></p>
+		</div>
+	</div>
+	<script src="js/ajax.js"></script>
+	<script>
+	var register = document.querySelector('.cli')
+	var p = document.querySelector('.turn')
+	register.addEventListener('click', function () {
+		var name = document.querySelector('.name').value
+		var passworld = document.querySelector('.passworld').value
+		if(name === null){
+			p.innerHTML = '用户名不能为空'
+			return;
+		}
+		if(name.length < 6){
+			p.innerHTML = '用户名长度必须大于6'
+			return;
+		}
+		if(passworld === null){
+			p.innerHTML = '密码不能为空'
+			return;
+		}
+		if(passworld.length < 6){
+			p.innerHTML = '密码长度必须大于6'
+			return;
+		}
+		ajax({
+			url:'http://192.168.25.88:3000/register',
+			// url:'http://192.168.23.4:3000/register',
+			// url: '/register',
+			method: 'POST',
+			data:{
+				name: name,
+				passworld: passworld
+			},
+			success: function (data) {
+				p.innerHTML = JSON.parse(data).value
+			}
+		})
+	})
+	</script>
+</body>
+</html>

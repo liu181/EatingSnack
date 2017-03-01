@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#cv{
+			display: block;
+			margin: 50px auto; 
+		}
+	</style>
+</head> 
+<body>
+	<canvas id="cv"></canvas> 
+	<script src="js/ajax.js"></script>
+	<script src="js/Eating.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/fruit.js"></script>
+	<script src="js/background.js"></script>
+	<script src="js/bar.js"></script>
+	<script src="js/snack.js"></script>
+	<script src="js/Game.js"></script>
+	<script>
+		var canvas = document.getElementById('cv');
+		var ctx = canvas.getContext("2d");
+		canvas.height = 500;
+		canvas.width = 500;
+		var game = Eating.getGame(ctx).startGame();
+		
+	</script>
+</body>
+</html>

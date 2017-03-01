@@ -1,2 +1,2 @@
 # eatingsnack 
-![image](https://github.com/liu181/pic/home.bmp)
+![image](https://github.com/liu181/picture/home.bmp)

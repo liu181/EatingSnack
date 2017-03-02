@@ -13,12 +13,13 @@
 - 操作  
 -     暂停：p 保存：s 方向：上下左右
 - 首页
-![image](https://github.com/liu181/eatingSnack/blob/master/picture/home.bmp)
+-- ![image](https://github.com/liu181/eatingSnack/blob/master/picture/home.bmp)
 - 注册页面
-![image](https://github.com/liu181/eatingSnack/blob/master/picture/register.bmp)
+-- ![image](https://github.com/liu181/eatingSnack/blob/master/picture/register.bmp)
 - 登录页面
-![image](https://github.com/liu181/eatingSnack/blob/master/picture/login.bmp)
+-- ![image](https://github.com/liu181/eatingSnack/blob/master/picture/login.bmp)
 - 游戏页面
-![image](https://github.com/liu181/eatingSnack/blob/master/picture/game.bmp)
+-- ![image](https://github.com/liu181/eatingSnack/blob/master/picture/game.bmp)
+
 ## 参考资料
 

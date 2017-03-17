@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-01-14 20:23:33
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-03-01 20:25:50
+* @Last Modified time: 2017-03-02 19:48:35
 */
 
 'use strict'; 
@@ -75,6 +75,10 @@
 		this.snack.addListener('die', function () {
 			that.endGame()
 		})
+
+
+
+		
 		this.date.addListener(function () {
 			that.date.levelUp()
 			that.snack.speedUp()

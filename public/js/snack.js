@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-01-14 21:56:04
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-02-27 21:09:52
+* @Last Modified time: 2017-03-02 19:51:03
 */
 
 // 'use strict'; 
@@ -37,6 +37,7 @@
 		}
 		
 	}
+	
 	Snack.fn.speedUp = function () {
 		this.flag -= 13
 	}
